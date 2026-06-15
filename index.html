@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiopramana — Student</title>
+    <link
+      rel="shortcut icon"
+      href="/ASSETS/img/image.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Pixel transition overlay -->
+    <div id="pixel-overlay"></div>
+
+    <!-- Ferrofluid WebGL Background -->
+    <canvas id="ferrofluid-canvas"></canvas>
+
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- ─── NAVBAR ─── -->
+    <nav>
+      <div class="nav-inner">
+        <a href="#" class="logo nav-logo">Tiopramana<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li>
+            <a
+              href="/ASSETS/IKomangTioPramana_CV_Academy.pdf"
+              download
+              class="btn-primary"
+            >
+              <i class="fas fa-download" style="font-size: 0.75rem"></i> Resume
+            </a>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
+      <a href="#work" class="mobile-link">Work</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#gallery" class="mobile-link">Gallery</a>
+      <a
+        href="/cv_orpax.pdf"
+        download
+        class="btn-primary"
+        style="font-size: 1rem; padding: 0.85rem 2.5rem"
+        >Download Resume</a
+      >
+    </div>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Text -->
+        <div class="hero-text">
+          <div class="hero-tag reveal">Available for work</div>
+          <h1 class="hero-title">
+            <span class="reveal" style="display: block">I'm</span>
+            <span class="reveal" style="display: block" id="name-animate"
+              >Tiopramana</span
+            >
+            <span class="reveal line-muted" style="display: block"
+              >a tech student</span
+            >
+            <span class="reveal word-gradient" style="display: block"
+              >& designer.</span
+            >
+          </h1>
+          <p class="hero-desc reveal">
+            Based in Indonesia. I craft digital experiences that are beautiful,
+            intuitive, and human-centered — blending engineering precision with
+            design thinking.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#work" class="btn-ghost"
+              >View Work
+              <i class="fas fa-arrow-down" style="font-size: 0.7rem"></i
+            ></a>
+            <a href="mailto:tiopramanaa@gmail.com" class="btn-primary"
+              >Get in touch</a
+            >
+          </div>
+          <div class="hero-stats reveal">
+            <div>
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Years building</div>
+            </div>
+            <div>
+              <div class="stat-num">12+</div>
+              <div class="stat-label">Projects shipped</div>
+            </div>
+            <div>
+              <div class="stat-num">∞</div>
+              <div class="stat-label">Coffee consumed</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Card -->
+        <div class="hero-image-wrap">
+          <div class="hero-card reveal-right">
+            <img src="./ASSETS/img/me.png" alt="Tiopramana" />
+            <div class="hero-card-badge">
+              <span>Bali, ID</span>
+              Open to remote
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ─── -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-eyebrow reveal">Toolkit</span>
+        <h2 class="section-title reveal">My Skills</h2>
+      </div>
+      <div class="marquee-row">
+        <div class="marquee-track fwd" id="row1"></div>
+      </div>
+      <div class="marquee-row" style="margin-top: 0.75rem">
+        <div class="marquee-track rev" id="row2"></div>
+      </div>
+    </section>
+
+    <!-- ─── WORK ─── -->
+    <section id="work">
+      <div class="work-header">
+        <div>
+          <span class="section-eyebrow reveal">Portfolio</span>
+          <h2 class="section-title reveal">All Projects</h2>
+          <p
+            class="reveal"
+            style="color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem"
+          >
+            A curated selection of my recent work
+          </p>
+        </div>
+        <a href="#" class="btn-ghost reveal"
+          >All projects
+          <i class="fas fa-arrow-right" style="font-size: 0.7rem"></i
+        ></a>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Featured Card -->
+        <div class="project-card featured reveal-scale">
+          <div class="card-inner">
+            <video class="card-video" autoplay muted loop>
+              <source src="./ASSETS/img/IMG_1239.MOV" type="video/mp4" />
+            </video>
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <div class="card-tags">
+                <span class="tag">React Native (Expo)</span>
+                <span class="tag">Fastify</span>
+                <span class="tag">Node.js</span>
+              </div>
+              <h3 class="card-title">Full Stack Mobile Application</h3>
+              <p class="card-desc">
+                Interactive mobile app for product visualization with AR
+                capabilities
+              </p>
+              <div class="card-actions">
+                <button class="card-btn">View Project</button>
+                <button class="card-icon-btn">
+                  <i
+                    class="fas fa-external-link-alt"
+                    style="font-size: 0.75rem"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card reveal-scale">
+          <div
+            class="card-bg"
+            style="
+              background-image: url(&quot;./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png&quot;);
+              background-size: cover;
+            "
+          ></div>
+          <div class="card-inner">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <div class="card-tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Firebase</span>
+              </div>
+              <h3 class="card-title">Chat System</h3>
+              <p class="card-desc">
+                Chat system with polyglot database architecture
+              </p>
+              <div class="card-actions">
+                <button class="card-btn">Case Study</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card reveal-scale">
+          <div
+            class="card-bg"
+            style="
+              background-image: url(&quot;./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png&quot;);
+              background-size: cover;
+            "
+          ></div>
+          <div class="card-inner">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <div class="card-tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Firebase</span>
+              </div>
+              <h3 class="card-title">Chat System</h3>
+              <p class="card-desc">
+                Chat system with polyglot database architecture
+              </p>
+              <div class="card-actions">
+                <button class="card-btn">Case Study</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wide Card -->
+        <div class="project-card wide reveal-scale">
+          <div
+            class="card-bg"
+            style="
+              background-image: url(&quot;./ASSETS/img/project_ai.png&quot;);
+            "
+          ></div>
+          <div class="card-inner" style="min-height: 260px">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <div class="card-tags">
+                <span class="tag">AI/ML</span>
+                <span class="tag">React</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+              </div>
+              <h3 class="card-title">AI Content Platform</h3>
+              <p class="card-desc">
+                Automated content generation system powered by LLMs
+              </p>
+              <div class="card-actions">
+                <button class="card-btn">Case Study</button>
+                <button class="card-icon-btn">
+                  <i
+                    class="fas fa-external-link-alt"
+                    style="font-size: 0.75rem"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+      <div class="about-inner">
+        <div class="about-image reveal-left">
+          <div class="about-image-card">
+            <img src="./ASSETS/img/me.png" alt="Tiopramana" />
+          </div>
+          <div class="about-badges">
+            <div class="about-badge">
+              <strong>Tiopramana</strong>
+              Product Designer & Developer
+            </div>
+            <div class="about-badge">
+              <strong>🎓 CS Student</strong>
+              Indonesia
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <span class="section-eyebrow">About me</span>
+          <h2 class="section-title" style="margin-bottom: 1.25rem">
+            Designing with<br />purpose
+          </h2>
+          <p>
+            I'm a tech student from Indonesia with a passion for building
+            digital products that bridge the gap between engineering and design.
+            I believe great software feels invisible — it just works.
+          </p>
+          <p>
+            When I'm not writing code or sketching interfaces, I'm exploring new
+            tools, contributing to open-source, or deep-diving into the latest
+            in AI/ML.
+          </p>
+          <ul class="about-list">
+            <li>UI/UX Design</li>
+            <li>React & React Native</li>
+            <li>Node.js / Fastify</li>
+            <li>Flutter & Firebase</li>
+            <li>AI/ML Integration</li>
+            <li>Figma & Prototyping</li>
+          </ul>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+            <a href="mailto:tiopramanaa@gmail.com" class="btn-primary"
+              >Say hello</a
+            >
+            <a href="/cv_orpax.pdf" download class="btn-ghost">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── GALLERY (Masonry) ─── -->
+    <section id="gallery">
+      <div class="gallery-header">
+        <span class="section-eyebrow reveal">Visual</span>
+        <h2 class="section-title reveal">Gallery</h2>
+        <p
+          class="reveal"
+          style="color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem"
+        >
+          Projects, screenshots and design work
+        </p>
+      </div>
+
+      <div class="masonry-grid">
+        <!-- Tall images -->
+        <div class="masonry-item reveal-scale">
+          <img
+            src="./ASSETS/img/projects-1.jpg"
+            alt="Project 1"
+            loading="lazy"
+          />
+          <div class="item-overlay">
+            <span class="item-label">Project preview</span>
+          </div>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale">
+          <i class="fas fa-pencil-ruler"></i>
+          <span>Figma</span>
+        </div>
+
+        <div class="masonry-item reveal-scale">
+          <img
+            src="./ASSETS/img/projects-2.jpg"
+            alt="Project 2"
+            loading="lazy"
+          />
+          <div class="item-overlay">
+            <span class="item-label">UI Design</span>
+          </div>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale" style="min-height: 100px">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </div>
+
+        <div class="masonry-item reveal-scale">
+          <img
+            src="./ASSETS/img/projects-3.jpg"
+            alt="Project 3"
+            loading="lazy"
+          />
+          <div class="item-overlay">
+            <span class="item-label">Development</span>
+          </div>
+        </div>
+
+        <div class="masonry-item reveal-scale">
+          <img
+            src="./ASSETS/img/projects-4.jpg"
+            alt="Project 4"
+            loading="lazy"
+          />
+          <div class="item-overlay">
+            <span class="item-label">Design work</span>
+          </div>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale" style="min-height: 180px">
+          <i class="fab fa-react" style="font-size: 2.5rem"></i>
+          <span>React Native</span>
+        </div>
+
+        <div class="masonry-item reveal-scale">
+          <img
+            src="./ASSETS/img/projects-5.jpg"
+            alt="Project 5"
+            loading="lazy"
+          />
+          <div class="item-overlay">
+            <span class="item-label">Mobile app</span>
+          </div>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale">
+          <i class="fas fa-palette"></i>
+          <span>Tailwind CSS</span>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale" style="min-height: 160px">
+          <i
+            class="fab fa-node-js"
+            style="color: #68a063; font-size: 2.5rem"
+          ></i>
+          <span>Node.js</span>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale">
+          <i class="fab fa-python" style="color: #4584b6"></i>
+          <span>Python</span>
+        </div>
+
+        <div class="masonry-placeholder reveal-scale" style="min-height: 120px">
+          <i class="fas fa-database" style="color: var(--accent2)"></i>
+          <span>MongoDB</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <a href="#" class="logo" style="margin-bottom: 0.5rem; display: block"
+            >Tio<span
+              style="
+                background: linear-gradient(
+                  135deg,
+                  var(--accent),
+                  var(--accent2)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              "
+              >.</span
+            ></a
+          >
+          <p>© 2025 Tiopramana. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i> Twitter</a
+          >
+          <a href="https://linkedin.com" target="_blank"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
+          <a href="https://github.com" target="_blank"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Discord Button -->
+    <a
+      href="https://discord.com/users/760889801745891388"
+      target="_blank"
+      class="discord-btn"
+      title="Discord"
+    >
+      <i class="fab fa-discord fa-beat-fade"></i>
+    </a>
+
+    <!-- ─── SCRIPTS ─── -->
+
+    <script src="script.js"></script>
+
+    <!-- <script>
+      // ── PIXEL TRANSITION ──
+      (function () {
+        const overlay = document.getElementById("pixel-overlay");
+        const SIZE = 40;
+        const cols = Math.ceil(window.innerWidth / SIZE) + 1;
+        const rows = Math.ceil(window.innerHeight / SIZE) + 1;
+        const total = cols * rows;
+
+        overlay.style.gridTemplateColumns = `repeat(${cols}, ${SIZE}px)`;
+        overlay.style.gridTemplateRows = `repeat(${rows}, ${SIZE}px)`;
+
+        for (let i = 0; i < total; i++) {
+          const b = document.createElement("div");
+          b.className = "pixel-block";
+          overlay.appendChild(b);
+        }
+
+        const blocks = overlay.querySelectorAll(".pixel-block");
+
+        function dissolve() {
+          const indices = Array.from({ length: total }, (_, i) => i);
+          // Shuffle
+          for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
+          }
+
+          let done = 0;
+          const batch = Math.ceil(total / 40);
+
+          indices.forEach((idx, pos) => {
+            const delay = Math.floor(pos / batch) * 30;
+            setTimeout(() => {
+              blocks[idx].style.transition = "opacity 0.2s, transform 0.3s";
+              blocks[idx].style.opacity = "0";
+              blocks[idx].style.transform = "scale(0)";
+              done++;
+              if (done === total) {
+                setTimeout(() => {
+                  overlay.style.display = "none";
+                }, 300);
+              }
+            }, delay);
+          });
+        }
+
+        window.addEventListener("load", () => setTimeout(dissolve, 200));
+      })();
+
+      // ── FERROFLUID WEBGL BACKGROUND ──
+      (function () {
+        const canvas = document.getElementById("ferrofluid-canvas");
+        const gl = canvas.getContext("webgl", {
+          alpha: true,
+          premultipliedAlpha: false,
+        });
+        if (!gl) {
+          console.warn("WebGL not supported");
+          return;
+        }
+
+        gl.clearColor(0, 0, 0, 0);
+        gl.enable(gl.BLEND);
+        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+        // ── CONFIG (matching Ferrofluid props) ──
+        const CFG = {
+          colors: ["#000000", "#fcffcf", "#0f0f0f0", "#34d399"],
+          speed: 0.1,
+          scale: 1.6,
+          turbulence: 1.0,
+          fluidity: 0.1,
+          rimWidth: 0.22,
+          sharpness: 2.5,
+          shimmer: 1.5,
+          glow: 2.2,
+          flowDirection: "down",
+          opacity: 1.0,
+          mouseStrength: 1.0,
+          mouseRadius: 0.35,
+          mouseDampening: 0.15,
+        };
+
+        const MAX_COLORS = 8;
+        const hexToRGB = (hex) => {
+          const c = hex.replace("#", "").padEnd(6, "0");
+          return [
+            parseInt(c.slice(0, 2), 16) / 255,
+            parseInt(c.slice(2, 4), 16) / 255,
+            parseInt(c.slice(4, 6), 16) / 255,
+          ];
+        };
+        const prepColors = (inp) => {
+          const base = (inp && inp.length ? inp : ["#4F46E5"]).slice(
+            0,
+            MAX_COLORS,
+          );
+          const arr = [];
+          for (let i = 0; i < MAX_COLORS; i++)
+            arr.push(hexToRGB(base[Math.min(i, base.length - 1)]));
+          return { arr, count: base.length };
+        };
+        const flowVec = (d) =>
+          ({ up: [0, 1], down: [0, -1], left: [-1, 0], right: [1, 0] })[d] || [
+            0, -1,
+          ];
+
+        // ── VERTEX SHADER ──
+        const vsSource = `
+        attribute vec2 aPosition;
+        varying vec2 vUv;
+        void main() {
+          vUv = aPosition * 0.5 + 0.5;
+          gl_Position = vec4(aPosition, 0.0, 1.0);
+        }
+      `;
+
+        // ── FRAGMENT SHADER (direct port from Ferrofluid) ──
+        const fsSource = `
+        precision highp float;
+        uniform vec3  iResolution;
+        uniform vec2  iMouse;
+        uniform float iTime;
+        uniform vec3  uColor0; uniform vec3 uColor1; uniform vec3 uColor2; uniform vec3 uColor3;
+        uniform vec3  uColor4; uniform vec3 uColor5; uniform vec3 uColor6; uniform vec3 uColor7;
+        uniform int   uColorCount;
+        uniform vec2  uFlow;
+        uniform float uSpeed;
+        uniform float uScale;
+        uniform float uTurbulence;
+        uniform float uFluidity;
+        uniform float uRimWidth;
+        uniform float uSharpness;
+        uniform float uShimmer;
+        uniform float uGlow;
+        uniform float uOpacity;
+        uniform float uMouseEnabled;
+        uniform float uMouseStrength;
+        uniform float uMouseRadius;
+        varying vec2 vUv;
+
+        #define PI 3.14159265
+
+        vec3 palette(float h) {
+          int cnt = uColorCount; if (cnt < 1) cnt = 1;
+          int idx = int(floor(clamp(h, 0.0, 0.999999) * float(cnt)));
+          if (idx <= 0) return uColor0;
+          if (idx == 1) return uColor1;
+          if (idx == 2) return uColor2;
+          if (idx == 3) return uColor3;
+          if (idx == 4) return uColor4;
+          if (idx == 5) return uColor5;
+          if (idx == 6) return uColor6;
+          return uColor7;
+        }
+
+        float hash(vec3 p3) {
+          p3 = fract(p3 * 0.1031);
+          p3 += dot(p3, p3.zyx + 33.33);
+          return fract((p3.x + p3.y) * p3.z);
+        }
+
+        float smin(float a, float b, float k) {
+          float r = exp2(-a/k) + exp2(-b/k);
+          return -k * log2(r);
+        }
+
+        float sinlerp(float a, float b, float w) {
+          return mix(a, b, (sin(w * PI - PI/2.0) + 1.0) / 2.0);
+        }
+
+        float vn(vec2 p, float s, float seed) {
+          vec2 cellp = floor(p/s);
+          vec2 relp  = mod(p, s);
+          float g1 = hash(vec3(cellp, seed));
+          float g2 = hash(vec3(cellp.x+1.0, cellp.y, seed));
+          float g3 = hash(vec3(cellp.x+1.0, cellp.y+1.0, seed));
+          float g4 = hash(vec3(cellp.x, cellp.y+1.0, seed));
+          float bx = sinlerp(g1, g2, relp.x/s);
+          float tx = sinlerp(g4, g3, relp.x/s);
+          return sinlerp(bx, tx, relp.y/s);
+        }
+
+        float dbn(vec2 p, float s, float seed) {
+          float o = s/2.0;
+          float n0 = vn(p, s, seed);
+          float n1 = vn(p+vec2(o,o),   s, seed+0.1);
+          float n2 = vn(p+vec2(-o,o),  s, seed+0.2);
+          float n3 = vn(p+vec2(o,-o),  s, seed+0.3);
+          float n4 = vn(p+vec2(-o,-o), s, seed+0.4);
+          return (2.0*n0 + 1.5*n1 + 1.25*n2 + 1.125*n3 + n4) / 7.0;
+        }
+
+        void main() {
+          float ref = 700.0 / max(uScale, 0.05);
+          vec2 p = vUv * iResolution.xy / iResolution.y * ref;
+          float spd = 200.0 * uSpeed;
+          float t = iTime;
+          vec2 dir = uFlow;
+          vec2 perp = vec2(-dir.y, dir.x);
+
+          float d1 = vn(p + perp*(t*spd), 60.0, 10.0) * 50.0 * uTurbulence;
+          float d2 = vn(p - perp*(t*spd), 120.0, 15.0) * 100.0 * uTurbulence;
+
+          float peaks  = dbn(p + d1 + dir*(t*spd*0.5), 40.0, 1.0);
+          float peaks2 = dbn(p + d2 - dir*(t*spd*0.5), 40.0, 0.0);
+
+          float mapeaks = smin(peaks, peaks2, max(uFluidity, 0.001));
+
+          float mGlow = 0.0;
+          if (uMouseEnabled > 0.5) {
+            vec2 mp = iMouse / iResolution.y * ref;
+            float md = length(p - mp) / ref;
+            float rr = max(uMouseRadius, 0.02);
+            mGlow = exp(-md*md/(rr*rr)) * uMouseStrength;
+          }
+
+          float band = (uRimWidth - abs((mapeaks - 0.4) * 2.0)) * 5.0;
+          float ltn  = clamp(band - vn(p + dir*(t*spd*0.5), 60.0, 12.0)*uShimmer, 0.0, 1.0);
+          ltn = pow(ltn, uSharpness) * uGlow;
+          ltn *= clamp(1.0 - mGlow, 0.0, 1.0);
+
+          float h = clamp(0.5 + (peaks - peaks2)*0.8, 0.0, 1.0);
+          vec3 col = palette(h);
+          vec3 outc = col * ltn;
+          float a = clamp(max(outc.r, max(outc.g, outc.b)), 0.0, 1.0);
+          gl_FragColor = vec4(outc, a * uOpacity);
+        }
+      `;
+
+        // ── COMPILE SHADERS ──
+        function makeShader(type, src) {
+          const s = gl.createShader(type);
+          gl.shaderSource(s, src);
+          gl.compileShader(s);
+          if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+            console.error("Shader error:", gl.getShaderInfoLog(s));
+            return null;
+          }
+          return s;
+        }
+        const vs = makeShader(gl.VERTEX_SHADER, vsSource);
+        const fs = makeShader(gl.FRAGMENT_SHADER, fsSource);
+        if (!vs || !fs) return;
+
+        const prog = gl.createProgram();
+        gl.attachShader(prog, vs);
+        gl.attachShader(prog, fs);
+        gl.linkProgram(prog);
+        if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+          console.error("Program link error:", gl.getProgramInfoLog(prog));
+          return;
+        }
+        gl.useProgram(prog);
+
+        // ── FULLSCREEN TRIANGLE ──
+        const buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(
+          gl.ARRAY_BUFFER,
+          new Float32Array([-1, -1, 3, -1, -1, 3]),
+          gl.STATIC_DRAW,
+        );
+        const aPos = gl.getAttribLocation(prog, "aPosition");
+        gl.enableVertexAttribArray(aPos);
+        gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+        // ── UNIFORMS ──
+        const U = (name) => gl.getUniformLocation(prog, name);
+        const uLocs = {
+          iResolution: U("iResolution"),
+          iMouse: U("iMouse"),
+          iTime: U("iTime"),
+          uColor0: U("uColor0"),
+          uColor1: U("uColor1"),
+          uColor2: U("uColor2"),
+          uColor3: U("uColor3"),
+          uColor4: U("uColor4"),
+          uColor5: U("uColor5"),
+          uColor6: U("uColor6"),
+          uColor7: U("uColor7"),
+          uColorCount: U("uColorCount"),
+          uFlow: U("uFlow"),
+          uSpeed: U("uSpeed"),
+          uScale: U("uScale"),
+          uTurbulence: U("uTurbulence"),
+          uFluidity: U("uFluidity"),
+          uRimWidth: U("uRimWidth"),
+          uSharpness: U("uSharpness"),
+          uShimmer: U("uShimmer"),
+          uGlow: U("uGlow"),
+          uOpacity: U("uOpacity"),
+          uMouseEnabled: U("uMouseEnabled"),
+          uMouseStrength: U("uMouseStrength"),
+          uMouseRadius: U("uMouseRadius"),
+        };
+
+        const { arr, count } = prepColors(CFG.colors);
+        const flow = flowVec(CFG.flowDirection);
+
+        function setUniforms() {
+          for (let i = 0; i < MAX_COLORS; i++) {
+            gl.uniform3fv(uLocs["uColor" + i], arr[i]);
+          }
+          gl.uniform1i(uLocs.uColorCount, count);
+          gl.uniform2fv(uLocs.uFlow, flow);
+          gl.uniform1f(uLocs.uSpeed, CFG.speed);
+          gl.uniform1f(uLocs.uScale, CFG.scale);
+          gl.uniform1f(uLocs.uTurbulence, CFG.turbulence);
+          gl.uniform1f(uLocs.uFluidity, CFG.fluidity);
+          gl.uniform1f(uLocs.uRimWidth, CFG.rimWidth);
+          gl.uniform1f(uLocs.uSharpness, CFG.sharpness);
+          gl.uniform1f(uLocs.uShimmer, CFG.shimmer);
+          gl.uniform1f(uLocs.uGlow, CFG.glow);
+          gl.uniform1f(uLocs.uOpacity, CFG.opacity);
+          gl.uniform1f(uLocs.uMouseEnabled, 1.0);
+          gl.uniform1f(uLocs.uMouseStrength, CFG.mouseStrength);
+          gl.uniform1f(uLocs.uMouseRadius, CFG.mouseRadius);
+        }
+        setUniforms();
+
+        // ── RESIZE ──
+        let W = 0,
+          H = 0;
+        function resize() {
+          const dpr = window.devicePixelRatio || 1;
+          W = Math.floor(window.innerWidth * dpr);
+          H = Math.floor(window.innerHeight * dpr);
+          canvas.width = W;
+          canvas.height = H;
+          gl.viewport(0, 0, W, H);
+        }
+        resize();
+        window.addEventListener("resize", resize);
+
+        // ── MOUSE ──
+        const mouse = { cur: [0, 0], target: [0, 0] };
+        let lastMT = 0;
+        window.addEventListener("mousemove", (e) => {
+          const dpr = window.devicePixelRatio || 1;
+          mouse.target[0] = e.clientX * dpr;
+          mouse.target[1] = (window.innerHeight - e.clientY) * dpr;
+        });
+
+        // ── RENDER LOOP ──
+        function loop(t) {
+          requestAnimationFrame(loop);
+          const secs = t * 0.001;
+          if (!lastMT) lastMT = secs;
+          const dt = secs - lastMT;
+          lastMT = secs;
+          const tau = Math.max(1e-4, CFG.mouseDampening);
+          const f = Math.min(1, 1 - Math.exp(-dt / tau));
+          mouse.cur[0] += (mouse.target[0] - mouse.cur[0]) * f;
+          mouse.cur[1] += (mouse.target[1] - mouse.cur[1]) * f;
+
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.uniform3f(uLocs.iResolution, W, H, 1);
+          gl.uniform2f(uLocs.iMouse, mouse.cur[0], mouse.cur[1]);
+          gl.uniform1f(uLocs.iTime, secs);
+          gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+        requestAnimationFrame(loop);
+      })();
+
+      // ── CURSOR ──
+      (function () {
+        const dot = document.getElementById("cursor");
+        const ring = document.getElementById("cursor-ring");
+        let mx = -100,
+          my = -100,
+          rx = -100,
+          ry = -100;
+
+        document.addEventListener("mousemove", (e) => {
+          mx = e.clientX;
+          my = e.clientY;
+        });
+
+        function updateRing() {
+          rx += (mx - rx) * 0.12;
+          ry += (my - ry) * 0.12;
+          dot.style.left = mx + "px";
+          dot.style.top = my + "px";
+          ring.style.left = rx + "px";
+          ring.style.top = ry + "px";
+          requestAnimationFrame(updateRing);
+        }
+        updateRing();
+
+        document
+          .querySelectorAll("a, button, .project-card, .masonry-item")
+          .forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+              ring.style.width = "52px";
+              ring.style.height = "52px";
+              ring.style.opacity = "0.6";
+            });
+            el.addEventListener("mouseleave", () => {
+              ring.style.width = "32px";
+              ring.style.height = "32px";
+              ring.style.opacity = "1";
+            });
+          });
+      })();
+
+      // ── MOBILE MENU ──
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let menuOpen = false;
+
+      hamburger.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle("open", menuOpen);
+        document.body.style.overflow = menuOpen ? "hidden" : "";
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          document.body.style.overflow = "";
+        }),
+      );
+
+      // ── SKILLS MARQUEE ──
+      const row1Skills = [
+        { name: "React", icon: "fab fa-react" },
+        { name: "Node.js", icon: "fab fa-node-js" },
+        { name: "TypeScript", icon: "fab fa-js-square" },
+        { name: "Python", icon: "fab fa-python" },
+        { name: "Fastify", icon: "fas fa-rocket" },
+        { name: "Expo", icon: "fas fa-mobile-alt" },
+        { name: "Laravel", icon: "fab fa-laravel" },
+        { name: "Flutter", icon: "fas fa-mobile" },
+      ];
+      const row2Skills = [
+        { name: "Figma", icon: "fas fa-pencil-ruler" },
+        { name: "MongoDB", icon: "fas fa-database" },
+        { name: "Tailwind CSS", icon: "fas fa-palette" },
+        { name: "Git", icon: "fab fa-git-alt" },
+        { name: "Firebase", icon: "fas fa-fire" },
+        { name: "Docker", icon: "fab fa-docker" },
+      ];
+
+      function makePill(s) {
+        return `<div class="skill-pill"><i class="${s.icon}"></i>${s.name}</div>`;
+      }
+
+      document.getElementById("row1").innerHTML = [
+        ...row1Skills,
+        ...row1Skills,
+        ...row1Skills,
+        ...row1Skills,
+      ]
+        .map(makePill)
+        .join("");
+      document.getElementById("row2").innerHTML = [
+        ...row2Skills,
+        ...row2Skills,
+        ...row2Skills,
+        ...row2Skills,
+      ]
+        .map(makePill)
+        .join("");
+
+      // ── GSAP ANIMATIONS ──
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Navbar slide in
+      gsap.from("nav", {
+        y: -80,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.5,
+      });
+
+      // Hero stagger reveal
+      gsap.utils.toArray(".hero .reveal").forEach((el, i) => {
+        gsap.to(el, {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          delay: 0.8 + i * 0.1,
+          ease: "power3.out",
+        });
+      });
+
+      gsap.to(".hero .reveal-right", {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.9,
+        ease: "power3.out",
+      });
+
+      // Scroll-triggered reveals
+      gsap.utils.toArray(".reveal").forEach((el) => {
+        if (el.closest(".hero")) return;
+        gsap.to(el, {
+          scrollTrigger: { trigger: el, start: "top 85%" },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      });
+
+      gsap.utils.toArray(".reveal-left").forEach((el) => {
+        gsap.to(el, {
+          scrollTrigger: { trigger: el, start: "top 80%" },
+          x: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power3.out",
+        });
+      });
+
+      gsap.utils.toArray(".reveal-right").forEach((el) => {
+        if (el.closest(".hero")) return;
+        gsap.to(el, {
+          scrollTrigger: { trigger: el, start: "top 80%" },
+          x: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power3.out",
+        });
+      });
+
+      gsap.utils.toArray(".reveal-scale").forEach((el, i) => {
+        gsap.to(el, {
+          scrollTrigger: { trigger: el, start: "top 88%" },
+          scale: 1,
+          opacity: 1,
+          duration: 0.7,
+          delay: (i % 4) * 0.08,
+          ease: "back.out(1.4)",
+        });
+      });
+
+      // Section titles scrub
+      gsap.utils.toArray(".section-title").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { backgroundPositionX: "0%" },
+          {
+            scrollTrigger: {
+              trigger: el,
+              start: "top 80%",
+              end: "bottom 20%",
+              scrub: 1,
+            },
+            backgroundPositionX: "100%",
+          },
+        );
+      });
+    </script> -->
+  </body>
+</html>
