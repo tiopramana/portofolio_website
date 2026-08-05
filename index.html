@@ -10,16 +10,18 @@
       type="image/x-icon"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Anton&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_2.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- ─── Eathan-style hero overrides (scoped to #eathan-hero) ─── -->
   </head>
 
   <body>
@@ -63,71 +65,69 @@
       <a href="#about" class="mobile-link">About</a>
       <a href="#gallery" class="mobile-link">Gallery</a>
       <a
-        href="/cv_orpax.pdf"
+        href="/ASSETS/IKomangTioPramana_CV_Academy.pdf"
         download
         class="btn-primary"
         style="font-size: 1rem; padding: 0.85rem 2.5rem"
         >Download Resume</a
       >
     </div>
+    <section id="eathan-hero">
+      <canvas id="eathan-bg"></canvas>
 
-    <!-- ─── HERO ─── -->
-    <section class="hero">
-      <div class="hero-inner">
-        <!-- Text -->
-        <div class="hero-text">
-          <div class="hero-tag reveal">Available for work</div>
-          <h1 class="hero-title">
-            <span class="reveal" style="display: block">I'm</span>
-            <span class="reveal" style="display: block" id="name-animate"
-              >Tiopramana</span
-            >
-            <span class="reveal line-muted" style="display: block"
-              >a tech student</span
-            >
-            <span class="reveal word-gradient" style="display: block"
-              >& designer.</span
-            >
-          </h1>
-          <p class="hero-desc reveal">
-            Based in Indonesia. I craft digital experiences that are beautiful,
-            intuitive, and human-centered — blending engineering precision with
-            design thinking.
-          </p>
-          <div class="hero-actions reveal">
-            <a href="#work" class="btn-ghost"
-              >View Work
-              <i class="fas fa-arrow-down" style="font-size: 0.7rem"></i
-            ></a>
-            <a href="mailto:tiopramanaa@gmail.com" class="btn-primary"
-              >Get in touch</a
-            >
+      <main class="eh-content">
+        <div class="eh-headline-block">
+          <h1 class="eh-line-outline">Design With</h1>
+          <h1 class="eh-line-solid" id="eh-scramble">PURPOSE</h1>
+        </div>
+
+        <div class="eh-grid">
+          <div class="eh-grid-left">
+            <p class="eh-tagline">✦ Tech Student &amp; UI/UX Designer</p>
+            <a href="#work" class="eh-btn-primary">
+              View Projects
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
           </div>
-          <div class="hero-stats reveal">
-            <div>
-              <div class="stat-num">3+</div>
-              <div class="stat-label">Years building</div>
-            </div>
-            <div>
-              <div class="stat-num">12+</div>
-              <div class="stat-label">Projects shipped</div>
-            </div>
-            <div>
-              <div class="stat-num">∞</div>
-              <div class="stat-label">Coffee consumed</div>
+          <div class="eh-grid-right">
+            <p class="eh-bio" id="eh-bio"></p>
+            <div class="eh-location-tag">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              Based in Bali, Indonesia
             </div>
           </div>
         </div>
+      </main>
 
-        <!-- Image Card -->
-        <div class="hero-image-wrap">
-          <div class="hero-card reveal-right">
-            <img src="./ASSETS/img/me.png" alt="Tiopramana" />
-            <div class="hero-card-badge">
-              <span>Bali, ID</span>
-              Open to remote
-            </div>
-          </div>
+      <div class="eh-image">
+        <img src="./ASSETS/img/tiopramana-Photoroom.png" alt="Tiopramana" />
+      </div>
+
+      <div class="eh-marquee-wrap">
+        <div class="eh-marquee-track">
+          TIOPRAMANA // TECH STUDENT &amp; DESIGNER // TIOPRAMANA // TECH
+          STUDENT &amp; DESIGNER //&nbsp;
         </div>
       </div>
     </section>
@@ -169,7 +169,7 @@
         <!-- Featured Card -->
         <div class="project-card featured reveal-scale">
           <div class="card-inner">
-            <video class="card-video" autoplay muted loop>
+            <video class="card-video" autoplay muted loop playsinline>
               <source src="./ASSETS/img/IMG_1239.MOV" type="video/mp4" />
             </video>
             <div class="card-gradient"></div>
@@ -197,17 +197,15 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="project-card reveal-scale">
-          <div
-            class="card-bg"
-            style="
-              background-image: url(&quot;./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png&quot;);
-              background-size: cover;
-            "
-          ></div>
+        <!-- Card 2 — Chat System -->
+        <div class="project-card card-has-preview reveal-scale">
+          <div class="card-preview">
+            <img
+              src="./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png"
+              alt="Chat System preview"
+            />
+          </div>
           <div class="card-inner">
-            <div class="card-gradient"></div>
             <div class="card-content">
               <div class="card-tags">
                 <span class="tag">Flutter</span>
@@ -224,25 +222,25 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="project-card reveal-scale">
-          <div
-            class="card-bg"
-            style="
-              background-image: url(&quot;./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png&quot;);
-              background-size: cover;
-            "
-          ></div>
+        <!-- Card 3 — Dolce Fiore -->
+        <div class="project-card wide card-has-preview reveal-scale">
+          <div class="card-preview">
+            <img
+              src="./ASSETS/img/dolcefiore.netlify.app_.png"
+              alt="Dolce Fiore preview"
+            />
+          </div>
           <div class="card-inner">
-            <div class="card-gradient"></div>
             <div class="card-content">
               <div class="card-tags">
-                <span class="tag">Flutter</span>
-                <span class="tag">Firebase</span>
+                <span class="tag">React Js</span>
+                <span class="tag">Fastify</span>
+                <span class="tag">Node Js</span>
+                <span class="tag">MySQL</span>
               </div>
-              <h3 class="card-title">Chat System</h3>
+              <h3 class="card-title">Dolce Fiore</h3>
               <p class="card-desc">
-                Chat system with polyglot database architecture
+                Florist e-commerce website with product catalog and ordering
               </p>
               <div class="card-actions">
                 <button class="card-btn">Case Study</button>
@@ -251,12 +249,12 @@
           </div>
         </div>
 
-        <!-- Wide Card -->
+        <!-- Wide Card — AI Content Platform -->
         <div class="project-card wide reveal-scale">
           <div
             class="card-bg"
             style="
-              background-image: url(&quot;./ASSETS/img/project_ai.png&quot;);
+              background-image: url(&quot;./ASSETS/img/project_ai_1.png&quot;);
             "
           ></div>
           <div class="card-inner" style="min-height: 260px">
@@ -292,7 +290,7 @@
       <div class="about-inner">
         <div class="about-image reveal-left">
           <div class="about-image-card">
-            <img src="./ASSETS/img/me.png" alt="Tiopramana" />
+            <img src="./ASSETS/img/Tyo.png" alt="Tiopramana" />
           </div>
           <div class="about-badges">
             <div class="about-badge">
@@ -332,7 +330,12 @@
             <a href="mailto:tiopramanaa@gmail.com" class="btn-primary"
               >Say hello</a
             >
-            <a href="/cv_orpax.pdf" download class="btn-ghost">Download CV</a>
+            <a
+              href="./ASSETS/IKomangTioPramana_CV_Academy.pdf"
+              download
+              class="btn-ghost"
+              >Download CV</a
+            >
           </div>
         </div>
       </div>
@@ -494,8 +497,172 @@
     </a>
 
     <!-- ─── SCRIPTS ─── -->
-
     <script src="script.js"></script>
+
+    <!-- ─── Eathan hero: particle background + scramble + typewriter ─── -->
+    <script>
+      (function () {
+        const canvas = document.getElementById("eathan-bg");
+        const heroSection = document.getElementById("eathan-hero");
+        if (!canvas || !heroSection) return;
+        const ctx = canvas.getContext("2d");
+        let W, H;
+
+        function resize() {
+          W = canvas.width = heroSection.clientWidth;
+          H = canvas.height = heroSection.clientHeight;
+        }
+        resize();
+        window.addEventListener("resize", resize);
+
+        const mouse = { x: -9999, y: -9999 };
+        heroSection.addEventListener("mousemove", (e) => {
+          const rect = heroSection.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        });
+        heroSection.addEventListener("mouseleave", () => {
+          mouse.x = -9999;
+          mouse.y = -9999;
+        });
+
+        const COUNT = window.innerWidth < 768 ? 220 : 500;
+        const particles = [];
+        for (let i = 0; i < COUNT; i++) {
+          particles.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.15,
+            vy: (Math.random() - 0.5) * 0.15,
+            r: Math.random() * 1.5 + 0.4,
+          });
+        }
+
+        const LINES = 35;
+        const lines = [];
+        for (let i = 0; i < LINES; i++) {
+          lines.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            len: Math.random() * 80 + 40,
+            speed: Math.random() * 0.6 + 0.2,
+            angle: Math.random() * Math.PI * 2,
+          });
+        }
+
+        function lerpColor(c1, c2, t) {
+          return [
+            c1[0] + (c2[0] - c1[0]) * t,
+            c1[1] + (c2[1] - c1[1]) * t,
+            c1[2] + (c2[2] - c1[2]) * t,
+          ];
+        }
+        const BASE = [0, 31, 63];
+        const HILITE = [204, 255, 0];
+
+        function animate() {
+          ctx.clearRect(0, 0, W, H);
+
+          ctx.strokeStyle = "rgba(136,170,255,0.15)";
+          ctx.lineWidth = 1;
+          lines.forEach((l) => {
+            l.x += Math.cos(l.angle) * l.speed;
+            l.y += Math.sin(l.angle) * l.speed;
+            if (l.x < -100) l.x = W + 100;
+            if (l.x > W + 100) l.x = -100;
+            if (l.y < -100) l.y = H + 100;
+            if (l.y > H + 100) l.y = -100;
+            ctx.beginPath();
+            ctx.moveTo(l.x, l.y);
+            ctx.lineTo(
+              l.x - Math.cos(l.angle) * l.len,
+              l.y - Math.sin(l.angle) * l.len,
+            );
+            ctx.stroke();
+          });
+
+          particles.forEach((p) => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > W) p.vx *= -1;
+            if (p.y < 0 || p.y > H) p.vy *= -1;
+
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            let mix = 0;
+            if (dist < 140) {
+              mix = Math.max(0, 1 - dist / 140) * 0.6;
+              const force = ((140 - dist) / 140) * 0.6;
+              p.x += (dx / dist) * force;
+              p.y += (dy / dist) * force;
+            }
+            const col = lerpColor(BASE, HILITE, mix);
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${0.5 + mix * 0.5})`;
+            ctx.arc(p.x, p.y, p.r + mix * 1.5, 0, Math.PI * 2);
+            ctx.fill();
+          });
+
+          requestAnimationFrame(animate);
+        }
+        animate();
+
+        // scramble headline
+        const words = ["PURPOSE", "IMPACT", "INTENT"];
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const scrambleEl = document.getElementById("eh-scramble");
+        let wordIndex = 0;
+
+        function scrambleTo(target) {
+          let iteration = 0;
+          const interval = setInterval(() => {
+            let out = "";
+            for (let i = 0; i < target.length; i++) {
+              out +=
+                i < iteration
+                  ? target[i]
+                  : chars[Math.floor(Math.random() * chars.length)];
+            }
+            scrambleEl.textContent = out;
+            if (iteration >= target.length) {
+              clearInterval(interval);
+              scrambleEl.textContent = target;
+            }
+            iteration += 1 / 3;
+          }, 30);
+        }
+
+        function cycleWords() {
+          scrambleTo(words[wordIndex]);
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+        cycleWords();
+        setInterval(cycleWords, 4000);
+
+        // typewriter bio
+        const bioText =
+          "I'm Tiopramana — a tech student crafting bold, human-centered digital experiences that blend engineering precision with design thinking.";
+        const bioEl = document.getElementById("eh-bio");
+
+        function typeBio() {
+          bioEl.innerHTML = "";
+          [...bioText].forEach((ch, i) => {
+            const span = document.createElement("span");
+            span.className = "eh-char";
+            span.textContent = ch === " " ? "\u00A0" : ch;
+            span.style.transition = "opacity .3s ease";
+            span.style.transitionDelay = `${i * 0.018}s`;
+            bioEl.appendChild(span);
+            requestAnimationFrame(() => {
+              span.style.opacity = 1;
+            });
+          });
+        }
+        typeBio();
+        setInterval(typeBio, 7000);
+      })();
+    </script>
 
     <!-- <script>
       // ── PIXEL TRANSITION ──

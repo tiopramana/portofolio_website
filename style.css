@@ -582,6 +582,7 @@ nav {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
   gap: 1.25rem;
+  padding: 1.25rem;
 }
 
 @media (max-width: 1024px) {
