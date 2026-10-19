@@ -1,3 +1,31 @@
+// ── PAGE ENTRY LOADER ──
+(function () {
+  const loader = document.getElementById("page-loader");
+  if (!loader) return;
+
+  const heroImage = document.querySelector("#eathan-hero .eh-image img");
+  const heroImageReady =
+    !heroImage || heroImage.complete
+      ? Promise.resolve()
+      : new Promise((resolve) => {
+          heroImage.addEventListener("load", resolve, { once: true });
+          heroImage.addEventListener("error", resolve, { once: true });
+        });
+  const maxWait = new Promise((resolve) => setTimeout(resolve, 1800));
+  const startedAt = Number(document.documentElement.dataset.loaderStartedAt);
+  const minimumTime = Math.max(0, 650 - (Date.now() - startedAt));
+
+  Promise.race([heroImageReady, maxWait])
+    .then(
+      () =>
+        new Promise((resolve) => setTimeout(resolve, minimumTime)),
+    )
+    .then(() => {
+      document.documentElement.classList.remove("is-page-loading");
+      setTimeout(() => loader.remove(), 800);
+    });
+})();
+
 // ── PIXEL TRANSITION ──
 (function () {
   const overlay = document.getElementById("pixel-overlay");
@@ -56,19 +84,50 @@
   const videos = document.querySelectorAll("video[data-lazy-video]");
   if (!videos.length) return;
 
+  function setVideoStatus(video, message, isError = false) {
+    const loader = video.parentElement.querySelector("[data-video-loader]");
+    if (!loader) return;
+
+    loader.querySelector("[data-video-loader-message]").textContent = message;
+    loader.classList.toggle("is-error", isError);
+    loader.hidden = false;
+  }
+
+  function hideVideoStatus(video) {
+    const loader = video.parentElement.querySelector("[data-video-loader]");
+    if (loader) loader.hidden = true;
+  }
+
   function startVideo(video) {
     const source = video.querySelector("source[data-src]");
     if (!source?.dataset.src) return;
 
     video.autoplay = true;
     if (!source.src) {
+      setVideoStatus(video, "Loading video");
       source.src = source.dataset.src;
       video.load();
     }
     video.play().catch((error) => {
-      console.warn("Project video could not start:", error);
+      if (error.name !== "AbortError") {
+        setVideoStatus(video, "Video could not play", true);
+        console.warn("Project video could not start:", error);
+      }
     });
   }
+
+  videos.forEach((video) => {
+    video.addEventListener("waiting", () =>
+      setVideoStatus(video, "Buffering video"),
+    );
+    video.addEventListener("stalled", () =>
+      setVideoStatus(video, "Buffering video"),
+    );
+    video.addEventListener("playing", () => hideVideoStatus(video));
+    video.addEventListener("error", () =>
+      setVideoStatus(video, "Video unavailable", true),
+    );
+  });
 
   if (!("IntersectionObserver" in window)) {
     videos.forEach(startVideo);

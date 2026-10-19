@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tiopramana — Student</title>
+    <script>
+      document.documentElement.classList.add("is-page-loading");
+      document.documentElement.dataset.loaderStartedAt = Date.now();
+    </script>
     <link
       rel="shortcut icon"
       href="/ASSETS/img/image.png"
@@ -34,6 +38,30 @@
   </head>
 
   <body>
+    <div
+      class="page-loader"
+      id="page-loader"
+      role="status"
+      aria-live="polite"
+      aria-label="Preparing the portfolio"
+    >
+      <div class="page-loader-content">
+        <div class="page-loader-mark">Tiopramana<span>.</span></div>
+        <div class="page-loader-spinner" aria-hidden="true"></div>
+        <p class="page-loader-caption">Preparing your experience</p>
+        <div
+          class="page-loader-progress"
+          role="progressbar"
+          aria-label="Loading portfolio"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <span></span>
+        </div>
+        <span class="page-loader-note">DESIGN · CODE · EXPERIENCE</span>
+      </div>
+    </div>
+
     <!-- Pixel transition overlay -->
     <div id="pixel-overlay"></div>
 
@@ -207,6 +235,17 @@
                 </video>
 
                 <div class="media-overlay"></div>
+
+                <div
+                  class="project-video-loader"
+                  data-video-loader
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                >
+                  <span class="video-loader-spinner" aria-hidden="true"></span>
+                  <span data-video-loader-message>Loading video</span>
+                </div>
 
                 <div class="project-number">01</div>
 
