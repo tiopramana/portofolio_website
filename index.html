@@ -9,6 +9,9 @@
       href="/ASSETS/img/image.png"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Anton&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
@@ -18,8 +21,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    ></script>
 
     <!-- ─── Eathan-style hero overrides (scoped to #eathan-hero) ─── -->
   </head>
@@ -122,7 +131,12 @@
       </main>
 
       <div class="eh-image">
-        <img src="./ASSETS/img/tiopramana-Photoroom.png" alt="Tiopramana" />
+        <img
+          src="./ASSETS/img/tiopramana-Photoroom.png"
+          alt="Tiopramana"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
 
       <div class="eh-marquee-wrap">
@@ -157,10 +171,10 @@
               Projects built with<br />
               purpose and precision.
             </h2>
-            <p class="work-description reveal">
+            <pq class="work-description reveal">
               A collection of mobile applications, websites, and AI-powered
               experiences that I have designed and developed.
-            </p>
+            </pq>
           </div>
 
           <a href="#" class="work-link reveal">
@@ -178,8 +192,18 @@
               aria-label="View mobile application"
             >
               <div class="project-media">
-                <video autoplay muted loop playsinline>
-                  <source src="./ASSETS/img/IMG_1239.MOV" type="video/mp4" />
+                <video
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  poster="./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png"
+                  data-lazy-video
+                >
+                  <source
+                    data-src="./ASSETS/img/IMG_1239.MOV"
+                    type="video/mp4"
+                  />
                 </video>
 
                 <div class="media-overlay"></div>
@@ -219,6 +243,8 @@
                 <img
                   src="./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png"
                   alt="Chat system interface"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div class="project-number">02</div>
@@ -254,6 +280,8 @@
                 <img
                   src="./ASSETS/img/dolcefiore.netlify.app_.png"
                   alt="Dolce Fiore florist website"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div class="project-number">03</div>
@@ -293,6 +321,8 @@
                 <img
                   src="./ASSETS/img/project_ai_1.png"
                   alt="AI content platform interface"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div class="media-overlay"></div>
@@ -332,7 +362,12 @@
       <div class="about-inner">
         <div class="about-image reveal-left">
           <div class="about-image-card">
-            <img src="./ASSETS/img/Tyo.png" alt="Tiopramana" />
+            <img
+              src="./ASSETS/img/Tyo.png"
+              alt="Tiopramana"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="about-badges">
             <div class="about-badge">
@@ -431,6 +466,8 @@
               <img
                 src="./ASSETS/img/2026.png"
                 alt="Full stack mobile application"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="journey-image-overlay"></div>
@@ -471,6 +508,8 @@
               <img
                 src="./ASSETS/img/Screenshot 2026-04-25 at 13.00.25.png"
                 alt="Travel application and chat system"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="journey-image-overlay"></div>
@@ -507,7 +546,12 @@
             </div>
 
             <figure class="journey-visual">
-              <img src="./ASSETS/img/2024.JPG" alt="Modern florist website" />
+              <img
+                src="./ASSETS/img/2024.JPG"
+                alt="Modern florist website"
+                loading="lazy"
+                decoding="async"
+              />
 
               <div class="journey-image-overlay"></div>
 
@@ -546,6 +590,8 @@
               <img
                 src="./ASSETS/img/2023.JPG"
                 alt="Programming development journey"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="journey-image-overlay"></div>
@@ -582,7 +628,12 @@
             </div>
 
             <figure class="journey-visual">
-              <img src="./ASSETS/img/2022.png" alt="" />
+              <img
+                src="./ASSETS/img/2022.png"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
 
               <figcaption>
                 <span>The first line of code</span>
@@ -736,7 +787,7 @@
     </a>
 
     <!-- ─── SCRIPTS ─── -->
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 
     <!-- ─── Eathan hero: particle background + scramble + typewriter ─── -->
     <script>

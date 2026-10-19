@@ -1190,7 +1190,7 @@ footer {
   position: fixed;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(167, 139, 250, 0.4);
+  border: 1px solid rgba(255, 254, 255, 0.984);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9997;

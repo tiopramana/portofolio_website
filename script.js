@@ -44,7 +44,51 @@
     });
   }
 
-  window.addEventListener("load", () => setTimeout(dissolve, 200));
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => setTimeout(dissolve, 200),
+    { once: true },
+  );
+})();
+
+// ── LAZY PROJECT VIDEO ──
+(function () {
+  const videos = document.querySelectorAll("video[data-lazy-video]");
+  if (!videos.length) return;
+
+  function startVideo(video) {
+    const source = video.querySelector("source[data-src]");
+    if (!source?.dataset.src) return;
+
+    video.autoplay = true;
+    if (!source.src) {
+      source.src = source.dataset.src;
+      video.load();
+    }
+    video.play().catch((error) => {
+      console.warn("Project video could not start:", error);
+    });
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(startVideo);
+    return;
+  }
+
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(({ isIntersecting, target }) => {
+        if (isIntersecting) {
+          startVideo(target);
+        } else {
+          target.pause();
+        }
+      });
+    },
+    { rootMargin: "200px 0px" },
+  );
+
+  videos.forEach((video) => videoObserver.observe(video));
 })();
 
 // ── FERROFLUID WEBGL BACKGROUND ──
